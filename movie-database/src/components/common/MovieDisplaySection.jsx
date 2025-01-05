@@ -18,6 +18,9 @@ const MovieDisplaySection = () => {
     "luca",
     "rapunzel",
     "the meg",
+    "se7en",
+    "avengers endgame",
+    "home alone"
   ];
 
   return (
