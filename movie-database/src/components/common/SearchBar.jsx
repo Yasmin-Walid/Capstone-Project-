@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import FeatherIcon from "feather-icons-react";
 import useSearchMovieData from "../../hooks/useSearchMovieData";
+import { Link } from "react-router";
 
 const SearchBar = () => {
   const { register, handleSubmit } = useForm();
@@ -19,7 +20,10 @@ const SearchBar = () => {
 
   return (
     <div className="flex flex-col items-center pb-5 pt-5">
-      <form  className="w-full flex justify-center" onSubmit={handleSubmit(onSubmit)}>
+      <form
+        className="w-full flex justify-center"
+        onSubmit={handleSubmit(onSubmit)}
+      >
         {/* INPUT PART */}
         <div className="flex justify-center items-center">
           <input
@@ -57,31 +61,33 @@ const SearchBar = () => {
       )}
 
       {/* Data is fetched */}
-      <div className="flex justify-center items-center flex-wrap gap-4 bg-gray-100 p-6 rounded-lg shadow-md mt-5">
-      {data?.Search && data.Search.length > 0 ? (   
-          data.Search.map((movie) => (
-            <div key={movie.imdbID} className="w-64 bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition">
-              <img
-                className="w-full  object-cover rounded-lg"
-                src={movie.Poster}
-                alt={movie.Title}
-              />
-              <h3 className="text-xl text-purple-600 font-bold hover:text-purple-900 transition-colors">
-                {movie.Title}
-              </h3>
-              <h4 className="text-lg text-purple-600 font-medium hover:text-purple-900 transition-colors">
-                Year: {movie.Year}
-              </h4>
-              <h4 className="text-lg text-purple-600 font-medium hover:text-purple-900 transition-colors">
-                Rating: {movie.imdbRating}
-              </h4>
+      <div className="flex justify-center items-center flex-wrap gap-4 p-6 rounded-lg mt-5 font-mono">
+        {data?.Search && data.Search.length > 0
+          ? data.Search.map((movie) => (
+              <div
+                key={movie.imdbID}
+                className="w-64 bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition"
+            >
+              <Link to = {`/movie/ ${movie.imdbID}`}>
+                <img
+                  className="w-full  object-cover rounded-lg"
+                  src={movie.Poster}
+                  alt={movie.Title}
+                />
+                <h3 className="text-xl text-purple-600 font-bold hover:text-purple-900 transition-colors">
+                  {movie.Title}
+                </h3>
+                <h4 className="text-lg text-purple-600 font-medium hover:text-purple-900 transition-colors">
+                  Year: {movie.Year}
+                </h4>
+
+                </Link>
             </div>
-          ))
-      ) : (
-        query && !isLoading && <p>No Results for "{query}"</p>
-      )}
+            
+            ))
+          : query && !isLoading && <p>No Results for &quot;{query}&quot;</p>}
       </div>
-      </div>
+    </div>
   );
 };
 

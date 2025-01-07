@@ -1,6 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { API_ENDPOINT_BASE } from "../config/tmdconfig";
 
+/* a hook to display the movie details once searched the movie name */
+
 function useMovieData(movieTitle) {
   const movie = movieTitle
     .toLowerCase()

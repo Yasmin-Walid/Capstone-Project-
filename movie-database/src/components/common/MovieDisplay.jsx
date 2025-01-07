@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import useMovieData from "../../hooks/useMovieData";
+import { Link } from "react-router";
 
 const MovieDisplay = (props) => {
   const { movieName } = props;
@@ -12,6 +13,8 @@ const MovieDisplay = (props) => {
     <div /* movie card */
       className="bg-purple-50 p-6 rounded-lg mx-auto mt-8 font-mono flex flex-col items-center justify-center"
     >
+     <Link to={`/movie/${movieData.imdbID}`}>
+
       <img
         className="rounded-lg h-auto shadow-md mb-4"
         src={movieData.Poster}
@@ -28,7 +31,8 @@ const MovieDisplay = (props) => {
       <h4 className="text-lg text-purple-600 font-medium hover:text-purple-900 transition-colors">
          Rating: {movieData.imdbRating}
       </h4>{" "}
-      {/* Rating */}
+        {/* Rating */}
+        </Link>
     </div>
   ) : (
     <p>getting your data</p>
