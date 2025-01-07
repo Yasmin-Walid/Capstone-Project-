@@ -36,7 +36,7 @@ const MoviePage = () => {
           <img
             className="my-4  max-w-md object-cover rounded-lg"
             src={data.Poster}
-            alt={data.Year}
+            alt={data.Title}
           />
         </div>
 
@@ -47,7 +47,8 @@ const MoviePage = () => {
         <h3 className="text-lg text-purple-600 font-bold hover:text-purple-900 transition-colors font-mono">
           Genre:
         </h3>
-        {data.Genre}
+              {data.Genre}
+              <h3 className="text-lg text-purple-600 font-bold hover:text-purple-900 transition-colors font-mono">Year:</h3> {data.Year}
         <div>
           <p className="text-lg text-purple-600  font-bold hover:text-purple-900 transition-colors font-mono">
             {" "}
