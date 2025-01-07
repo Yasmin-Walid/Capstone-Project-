@@ -13,9 +13,7 @@ const SearchBar = () => {
   const onSubmit = (formData) => {
     const searchTerm = formData.search.trim();
     setQuery(searchTerm);
-    if (isLoading) console.log(isLoading);
-    if (isError) console.log(isError);
-    if (data) console.log(data);
+    
   };
 
   return (

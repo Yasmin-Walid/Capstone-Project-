@@ -5,7 +5,6 @@ import { API_ENDPOINT_BASE } from "../../config/tmdconfig";
 /* to display the movie details once clicked on the poster */
 const fetchMovieDetails = async (id) => {
   const response = await fetch(`${API_ENDPOINT_BASE}&i=${id}`);
-  console.log(response, "Fetched Response");
   if (!response.ok) {
     throw new Error("failed to fetch data");
   }
