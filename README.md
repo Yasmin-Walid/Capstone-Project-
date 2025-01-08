@@ -1,6 +1,6 @@
 # Capstone-Project-
 
-# Movie Database Project
+# Movie Database Project:
 
 This project is a web application that provides a comprehensive movie database, fetching data primarily from IMDb (Internet Movie Database). It allows users to browse movies, view detailed information, search for specific titles, and manage their accounts.
 
