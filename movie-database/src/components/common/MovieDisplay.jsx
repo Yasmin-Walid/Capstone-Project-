@@ -1,6 +1,6 @@
-/* eslint-disable react/prop-types */
+
 import useMovieData from "../../hooks/useMovieData";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 const MovieDisplay = (props) => {
   const { movieName } = props;
@@ -8,6 +8,8 @@ const MovieDisplay = (props) => {
 
   if (isLoading) return <p>Please be Patient while we fetch the Data</p>;
   if (isError) return <p>Something went wrong</p>;
+  if (!movieData) return <p>No data available for the selected movie.</p>;
+
 
   return movieData ? (
     <div /* movie card */
@@ -18,7 +20,7 @@ const MovieDisplay = (props) => {
       <img
         className="rounded-lg h-auto shadow-md mb-4"
         src={movieData.Poster}
-        alt={movieData.Title}
+        alt={movieData.Title || "Movie poster unavailable"}
       />
       <h3 className="text-xl text-purple-600 font-bold hover:text-purple-900 transition-colors">
         {movieData.Title}
