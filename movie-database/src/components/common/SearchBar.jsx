@@ -21,7 +21,7 @@ const SearchBar = () => {
         onSubmit={handleSubmit(onSubmit)}
       >
         {/* INPUT PART */}
-        <div className="flex justify-center items-center">
+        <div className="flex flex-wrap justify-center items-center">
           <input
             {...register("search")}
             className="border-2 shadow-lg hover:shadow-lg rounded-xl w-96 h-10 focus:border-none	focus: outline-none font-mono text-slate-900 border-none mr-2"
@@ -31,9 +31,9 @@ const SearchBar = () => {
           />
 
           {/* div for the search button */}
-          <div className="ml-2 w-auto rounded-lg  hover:bg-purple-300 transotion duration-300 ease-in-out">
+          <div className="ml-0 sm:ml-2 w-full sm:w-auto">
             <button
-              className=" flex items-center  bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-pruble-600"
+              className="flex items-center justify-center w-full sm:w-auto bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition duration-300 ease-in-out m"
               type="submit"
             >
               <FeatherIcon className="w-4 h-4 mr-4" icon="search" />
