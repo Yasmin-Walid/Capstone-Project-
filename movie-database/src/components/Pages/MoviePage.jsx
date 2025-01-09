@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 import { API_ENDPOINT_BASE } from "../../config/tmdconfig";
 
 /* to display the movie details once clicked on the poster */

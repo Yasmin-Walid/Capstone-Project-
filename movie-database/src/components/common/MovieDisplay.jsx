@@ -1,6 +1,6 @@
 
 import useMovieData from "../../hooks/useMovieData";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 const MovieDisplay = (props) => {
   const { movieName } = props;
