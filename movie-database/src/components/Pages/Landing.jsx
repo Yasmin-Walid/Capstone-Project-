@@ -1,4 +1,4 @@
-import MovieDisplaySection from "../common/movieDisplaySection";
+import MovieDisplaySection from "../common/MovieDisplaySection";
 import Hero from "../common/Hero";
 
 const Landing = () => {
