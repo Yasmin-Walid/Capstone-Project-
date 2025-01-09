@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 import MovieDisplay from "../common/MovieDisplay";
 
 const MovieDisplaySection = () => {
@@ -21,15 +20,15 @@ const MovieDisplaySection = () => {
     "se7en",
     "avengers endgame",
     "home alone"
-  ];
+  ].map((title) => title.trim()); // Trim whitespace
 
   return (
     <div className="bg-gray-100 p-6 rounded-lg shadow-md ">
       <div
         className="flex flex-wrap gap-4"
       >
-        {movieList.map((movieTitle, index) => (
-          <MovieDisplay key={index} movieName={movieTitle} />
+        {movieList.map((movieTitle) => (
+          <MovieDisplay key={movieTitle} movieName={movieTitle} />
         ))}
       </div>
     </div>
