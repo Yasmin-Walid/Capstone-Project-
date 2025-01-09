@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import { API_ENDPOINT_BASE } from "../../config/tmdconfig";
 
 /* to display the movie details once clicked on the poster */
@@ -34,7 +34,7 @@ const MoviePage = () => {
         <div className="flex flex-col items-center my-6">
           <img
             className="my-4  max-w-md object-cover rounded-lg"
-            src={data.Poster}
+            src={data.Poster ||"No image available"}
             alt={data.Title}
           />
         </div>
