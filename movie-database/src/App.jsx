@@ -1,7 +1,7 @@
 import "./App.css";
 import { QueryClient, QueryClientProvider} from "@tanstack/react-query";
 import { createBrowserRouter, RouterProvider} from "react-router";
-import Landing from "./components/pages/Landing";
+import Landing from "./components/Pages/Landing"
 import MoviePage from "./components/Pages/MoviePage";
 
 const queryClient = new QueryClient();
