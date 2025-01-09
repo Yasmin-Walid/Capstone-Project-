@@ -1,4 +1,3 @@
-
 import useMovieData from "../../hooks/useMovieData";
 import { Link } from "react-router";
 

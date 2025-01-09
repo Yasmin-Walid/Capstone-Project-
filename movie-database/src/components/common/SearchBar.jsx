@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import FeatherIcon from "feather-icons-react";
@@ -13,7 +12,6 @@ const SearchBar = () => {
   const onSubmit = (formData) => {
     const searchTerm = formData.search.trim();
     setQuery(searchTerm);
-    
   };
 
   return (
@@ -65,23 +63,21 @@ const SearchBar = () => {
               <div
                 key={movie.imdbID}
                 className="w-64 bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition"
-            >
-              <Link to = {`/movie/ ${movie.imdbID}`}>
-                <img
-                  className="w-full  object-cover rounded-lg"
-                  src={movie.Poster}
-                  alt={movie.Title}
-                />
-                <h3 className="text-xl text-purple-600 font-bold hover:text-purple-900 transition-colors">
-                  {movie.Title}
-                </h3>
-                <h4 className="text-lg text-purple-600 font-medium hover:text-purple-900 transition-colors">
-                  Year: {movie.Year}
-                </h4>
-
+              >
+                <Link to={`/movie/ ${movie.imdbID}`}>
+                  <img
+                    className="w-full  object-cover rounded-lg"
+                    src={movie.Poster}
+                    alt={movie.Title}
+                  />
+                  <h3 className="text-xl text-purple-600 font-bold hover:text-purple-900 transition-colors">
+                    {movie.Title}
+                  </h3>
+                  <h4 className="text-lg text-purple-600 font-medium hover:text-purple-900 transition-colors">
+                    Year: {movie.Year}
+                  </h4>
                 </Link>
-            </div>
-            
+              </div>
             ))
           : query && !isLoading && <p>No Results for &quot;{query}&quot;</p>}
       </div>
