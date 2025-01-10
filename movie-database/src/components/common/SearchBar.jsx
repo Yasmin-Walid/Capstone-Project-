@@ -67,8 +67,8 @@ const SearchBar = () => {
                 <Link to={`/movie/ ${movie.imdbID}`}>
                   <img
                     className="w-full  object-cover rounded-lg"
-                    src={movie.Poster}
-                    alt={movie.Title}
+                    src={movie.Poster|| "Unfortunatelly no poster available"}
+                    alt={movie.Title }
                   />
                   <h3 className="text-xl text-purple-600 font-bold hover:text-purple-900 transition-colors">
                     {movie.Title}
